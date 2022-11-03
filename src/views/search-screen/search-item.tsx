@@ -1,0 +1,41 @@
+import React, { useEffect, useState } from "react"
+import { Linking, View } from "react-native"
+import { Button, FitImage, Text } from "@github-shared"
+import {
+  IUserInfo,
+  IUserSearch,
+  userInfoEndpoint,
+} from "@github/services/networking/endpoints/login/search"
+import { API } from "@github/services"
+import { SearchItemStyles } from "./search.styles"
+
+const SearchItem = (props: { item: IUserSearch }) => {
+  let [data, setData] = useState<IUserInfo>()
+  //Loading more info for each user (name, bio)
+  //TO-DO need to make optimized
+  useEffect(() => {
+    API.request(userInfoEndpoint(props.item.login), {}).then((res) => {
+      if (res.ok) {
+        setData(res.data)
+      }
+    })
+  }, [props.item.login])
+  return (
+    <Button
+      style={SearchItemStyles.itemButtonContainer}
+      onPress={() => Linking.openURL(props.item.htmlUrl)}>
+      {/* //Avatar Image Section */}
+      <View style={SearchItemStyles.imageContainer}>
+        <FitImage source={{ uri: props.item.avatarUrl }} style={SearchItemStyles.image} />
+      </View>
+
+      {/* //Text Section */}
+      <View style={SearchItemStyles.infoContainer}>
+        <Text style={SearchItemStyles.title}>{props.item.login}</Text>
+        <Text style={SearchItemStyles.subtitle}>{data?.name}</Text>
+        <Text style={SearchItemStyles.content}>{data?.bio}</Text>
+      </View>
+    </Button>
+  )
+}
+export default SearchItem

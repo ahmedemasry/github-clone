@@ -11,6 +11,7 @@ const AppTheme = {
   colors: {
     ...DefaultTheme.colors,
     ...R.color.themeColors,
+    background: "rgb(0, 0, 1)",
   },
 }
 

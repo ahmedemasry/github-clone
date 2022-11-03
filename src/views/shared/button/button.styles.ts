@@ -41,8 +41,8 @@ export const getRippleConfig = (
       preset === "circular"
         ? R.layout.circularButtonDimension / 2
         : preset === "circular-small"
-        ? R.layout.circularSmallButtonDimension / 2
-        : undefined,
+          ? R.layout.circularSmallButtonDimension / 2
+          : undefined,
     color: ripplePreset === "secondary" ? R.color.secondaryRipple : R.color.ripple,
     borderless: false,
   }

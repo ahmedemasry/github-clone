@@ -7,4 +7,13 @@ module.exports = {
   bracketSpacing: true,
   jsxBracketSameLine: true,
   arrowParens: "always",
+  "rules": {
+    "prettier/prettier": ["error", {
+      "endOfLine": "auto"
+
+    }
+    ]
+
+  }
+
 }

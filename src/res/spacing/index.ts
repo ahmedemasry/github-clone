@@ -1,5 +1,7 @@
 const spacing = {
   none: 0,
+  one: 1,
+  two: 2,
   tiny: 4,
   smaller: 8,
   small: 12,
@@ -9,6 +11,7 @@ const spacing = {
   huge: 32,
   massive: 40,
   giant: 60,
+  hundredPercent: "100%",
 } as const
 
 export default spacing

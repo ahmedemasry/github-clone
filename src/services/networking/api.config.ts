@@ -14,6 +14,11 @@ export interface IApiConfig {
    * Minimum timeout for request. It will be use for exponential back-off retry mechanism
    */
   minimumTimeout: number
+
+  /**
+   * Number of items in each request page.
+   */
+  itemsPerPage: number
 }
 
 /**
@@ -22,4 +27,5 @@ export interface IApiConfig {
 export const DEFAULT_API_CONFIG: IApiConfig = {
   url: ENV.baseURL,
   minimumTimeout: ApiConstants.requestTimeout,
+  itemsPerPage: ApiConstants.itemsPerPage,
 }
