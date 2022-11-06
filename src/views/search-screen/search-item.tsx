@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Linking, View } from "react-native"
-import { Button, FitImage, Text } from "@github-shared"
+import { Text } from "@github-shared"
 import {
   IUserInfo,
   IUserSearch,

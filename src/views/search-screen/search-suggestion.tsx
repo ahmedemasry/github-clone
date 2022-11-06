@@ -1,9 +1,9 @@
 import React from "react"
 import { View } from "react-native"
 
-import { Button, FitImage, Text } from "@github-shared"
+import { Button, Text } from "@github-shared"
 import { R } from "@github/res"
-import { StyledSearchByIcon, StyledSearchByView, SuggestionStyles } from "./search.styles"
+import { StyledSearchByIcon, StyledSearchByView } from "./search.styles"
 
 const SearchByButton = (props: {
   iconSource: number

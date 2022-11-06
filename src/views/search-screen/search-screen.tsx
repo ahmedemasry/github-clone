@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Platform, TextInput, FlatList, View, KeyboardAvoidingView, Keyboard } from "react-native"
+import { Platform, FlatList, View, KeyboardAvoidingView, Keyboard } from "react-native"
 
 import { SafeAreaView } from "react-native-safe-area-context"
 import {

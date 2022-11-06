@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 module.exports = {
   parser: "@typescript-eslint/parser",
   root: true,
@@ -59,3 +60,5 @@ module.exports = {
   },
   env: {
     browser: true, // Blob
+  },
+}
