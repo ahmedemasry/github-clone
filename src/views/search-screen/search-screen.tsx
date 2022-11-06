@@ -10,7 +10,7 @@ import { ActivityIndicator, Button, FitImage, Screen } from "@github-shared"
 import { API, DEFAULT_API_CONFIG } from "@github/services"
 import { R } from "@github/res"
 import SearchEmptyComponent from "./search-empty"
-import { SearchStyles } from "./search.styles"
+import { StyledAppBar, SearchStyles, StyledTextInput, StyledClearButton } from "./search.styles"
 import SearchSuggestion from "./search-suggestion"
 import SearchItem from "./search-item"
 
@@ -62,10 +62,9 @@ const SearchScreen = () => {
     <Screen preset="fixedStack">
       <SafeAreaView style={SearchStyles.screen}>
         {/*App Bar Section */}
-        <View style={SearchStyles.appBar}>
-          <TextInput
+        <StyledAppBar>
+          <StyledTextInput
             clearButtonMode="while-editing"
-            style={SearchStyles.input}
             onChangeText={setQuery}
             onFocus={() => setTyping(true)}
             value={query}
@@ -73,11 +72,11 @@ const SearchScreen = () => {
             placeholderTextColor={R.color.textInputPlaceholder}
           />
           {Platform.OS === "android" && query ? (
-            <Button onPress={() => setQuery("")} style={SearchStyles.clearIcon}>
+            <StyledClearButton onPress={() => setQuery("")} >
               <FitImage source={R.image.cancel} />
-            </Button>
+            </StyledClearButton>
           ) : null}
-        </View>
+        </StyledAppBar>
 
         {/*Result Part Section */}
         {isTyping && query && !isLoading ? (

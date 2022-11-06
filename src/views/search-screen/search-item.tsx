@@ -7,7 +7,7 @@ import {
   userInfoEndpoint,
 } from "@github/services/networking/endpoints/login/search"
 import { API } from "@github/services"
-import { SearchItemStyles } from "./search.styles"
+import { ItemButton, SearchItemStyles, StyledImageAvatar } from "./search.styles"
 
 const SearchItem = (props: { item: IUserSearch }) => {
   let [data, setData] = useState<IUserInfo>()
@@ -21,12 +21,11 @@ const SearchItem = (props: { item: IUserSearch }) => {
     })
   }, [props.item.login])
   return (
-    <Button
-      style={SearchItemStyles.itemButtonContainer}
+    <ItemButton
       onPress={() => Linking.openURL(props.item.htmlUrl)}>
       {/* //Avatar Image Section */}
       <View style={SearchItemStyles.imageContainer}>
-        <FitImage source={{ uri: props.item.avatarUrl }} style={SearchItemStyles.image} />
+        <StyledImageAvatar source={{ uri: props.item.avatarUrl }} />
       </View>
 
       {/* //Text Section */}
@@ -35,7 +34,7 @@ const SearchItem = (props: { item: IUserSearch }) => {
         <Text style={SearchItemStyles.subtitle}>{data?.name}</Text>
         <Text style={SearchItemStyles.content}>{data?.bio}</Text>
       </View>
-    </Button>
+    </ItemButton>
   )
 }
 export default SearchItem

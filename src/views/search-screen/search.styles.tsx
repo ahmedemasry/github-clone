@@ -1,30 +1,39 @@
-import { StyleSheet } from "react-native"
+import { StyleSheet, View } from "react-native"
+import styled from 'styled-components'
 import { R } from "@github/res"
+import { TextInput } from "react-native-gesture-handler"
+import { Button, FitImage } from "@github-shared"
+
+
+
+// Search Screen Styling
+
+export const StyledAppBar = styled(View)`
+  flexDirection: row;
+  padding: ${R.spacing.medium}px;
+  backgroundColor:${R.color.secondaryRipple};
+  alignItems: center;
+`
+export const StyledTextInput = styled(TextInput)`
+  flex: 1;
+  borderBottomWidth: ${R.spacing.two}px;
+  borderColor: ${R.color.textInputPlaceholder};
+  marginHorizontal: ${R.spacing.large}px;
+  color: ${R.color.text};
+  justifyContent: space-around;
+`
+
+export const StyledClearButton = styled(Button)`
+  height: ${R.spacing.huge}px;
+  width: ${R.spacing.huge}px;
+  borderRadius: ${R.spacing.massive}px;
+  backgroundColor: ${R.color.background};
+`
 
 export const SearchStyles = StyleSheet.create({
   screen: {
     flex: 1,
     padding: R.spacing.smaller,
-  },
-  appBar: {
-    flexDirection: "row",
-    padding: R.spacing.medium,
-    backgroundColor: R.color.secondaryRipple,
-    alignItems: "center",
-  },
-  input: {
-    flex: 1,
-    borderBottomWidth: R.spacing.two,
-    borderColor: R.color.textInputPlaceholder,
-    marginHorizontal: R.spacing.large,
-    color: R.color.text,
-    justifyContent: "space-around",
-  },
-  clearIcon: {
-    height: R.spacing.huge,
-    width: R.spacing.huge,
-    borderRadius: R.spacing.massive,
-    backgroundColor: R.color.background,
   },
 
   resultContainer: {
@@ -37,27 +46,32 @@ export const SearchStyles = StyleSheet.create({
   },
 })
 
+
+
+// Search Item Styling
+
+export const ItemButton = styled(Button)`
+  flexDirection: row;
+  justifyContent: flex-start;
+  width: ${R.spacing.hundredPercent};
+  padding: ${R.spacing.smaller}px;
+  alignItems: stretch;
+  borderBottomColor: ${R.color.secondaryRipple};
+  borderBottomWidth: ${R.spacing.one}px;
+`
+
+export const StyledImageAvatar = styled(FitImage)`
+  marginRight: ${R.spacing.small}px;
+  height: ${R.spacing.giant}px;
+  width: ${R.spacing.giant}px;
+  borderRadius: ${R.spacing.giant}px;
+`
 export const SearchItemStyles = StyleSheet.create({
-  itemButtonContainer: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    width: R.spacing.hundredPercent,
-    padding: R.spacing.smaller,
-    alignItems: "stretch",
-    borderBottomColor: R.color.secondaryRipple,
-    borderBottomWidth: R.spacing.one,
-  },
   imageContainer: {
     height: R.spacing.giant,
   },
   infoContainer: {
     flexDirection: "column",
-  },
-  image: {
-    marginRight: R.spacing.small,
-    height: R.spacing.giant,
-    width: R.spacing.giant,
-    borderRadius: R.spacing.giant,
   },
   title: {
     padding: R.spacing.smaller,
@@ -66,6 +80,10 @@ export const SearchItemStyles = StyleSheet.create({
   subtitle: {},
   content: {},
 })
+
+
+
+// Search Empty Styling
 
 export const SearchEmptyStyles = StyleSheet.create({
   container: {
@@ -89,18 +107,21 @@ export const SearchEmptyStyles = StyleSheet.create({
   },
 })
 
-export const SuggestionStyles = StyleSheet.create({
-  searchByButton: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    width: R.spacing.hundredPercent,
-    padding: R.spacing.smaller,
-    alignItems: "center",
-    backgroundColor: R.color.secondaryRipple,
-  },
-  icon: {
-    marginRight: R.spacing.small,
-    height: R.spacing.giant,
-    width: R.spacing.giant,
-  },
-})
+
+
+// Search Suggestions Styling
+
+export const StyledSearchByView = styled(View)`
+  flexDirection: row;
+  justifyContent: flex-start;
+  width: ${R.spacing.hundredPercent};
+  padding: ${R.spacing.smaller}px;
+  alignItems: center;
+  backgroundColor: ${R.color.secondaryRipple};
+`
+
+export const StyledSearchByIcon = styled(FitImage)`
+  marginRight: ${R.spacing.small}px;
+  height: ${R.spacing.giant}px;
+  width: ${R.spacing.giant}px;
+`

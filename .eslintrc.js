@@ -1,15 +1,9 @@
-/* eslint-disable prettier/prettier */
 module.exports = {
   parser: "@typescript-eslint/parser",
   root: true,
   extends: "@react-native-community",
   plugins: ["import"],
   rules: {
-    "indent": ["error", 2],
-    "prettier/prettier": ["error", {
-      "endOfLine": "auto"
-    },
-    ],
     quotes: ["error", "double"],
     semi: ["off"],
     "jsx-quotes": ["error", "prefer-double"],
@@ -65,5 +59,3 @@ module.exports = {
   },
   env: {
     browser: true, // Blob
-  },
-}

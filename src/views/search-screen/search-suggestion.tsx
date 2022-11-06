@@ -3,7 +3,7 @@ import { View } from "react-native"
 
 import { Button, FitImage, Text } from "@github-shared"
 import { R } from "@github/res"
-import { SuggestionStyles } from "./search.styles"
+import { StyledSearchByIcon, StyledSearchByView, SuggestionStyles } from "./search.styles"
 
 const SearchByButton = (props: {
   iconSource: number
@@ -14,10 +14,10 @@ const SearchByButton = (props: {
 }) => {
   return (
     <Button onPress={() => props.search(props.searchType)}>
-      <View style={SuggestionStyles.searchByButton}>
-        <FitImage source={props.iconSource} style={SuggestionStyles.icon} />
+      <StyledSearchByView>
+        <StyledSearchByIcon source={props.iconSource} />
         <Text>{`${props.text} "${props.query}"`}</Text>
-      </View>
+      </StyledSearchByView>
     </Button>
   )
 }
